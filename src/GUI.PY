@@ -55,7 +55,7 @@ class GUI:
     def loadMatrix(self, name: str):
         # cargo la matriz especificada, debe existir en la carpeta "matrices"
         try:
-            with open(path.join(path.dirname(__file__), f'matrices/{name}.txt')) as file:
+            with open(path.join(path.dirname(__file__), 'matrices', f'{name}.txt')) as file:
                 matriz_ = []
                 for i, r in enumerate(file.readlines()):
                     row: str = r.replace('\n', '')
@@ -489,7 +489,7 @@ class GUI:
         self.animation = False
         self.load_matriz = True
         self.matriz_random = True
-        self.loadMatrix('18x20_1_default')
+        self.loadMatrix('5x5_3223_T')
         while self.running:
 
             for event in pygame.event.get():
